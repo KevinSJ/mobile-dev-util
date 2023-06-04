@@ -12,16 +12,22 @@
   },
   "tauri": {
     "allowlist": {
-      "all": false,
+      "all": true,
       "shell": {
-        "all": false,
-        "open": true
+        "all": true,
+        "open": true,
+        "execute": true,
+        "scope": [
+          { "name": "adb", "cmd": "adb", "args": true },
+          { "name": "simctl", "cmd": "simctl", "args": true },
+          { "name": "emulator", "cmd": "emulator", "args": true }
+        ]
       }
     },
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.tauri.dev",
+      "identifier": "me.jiangsc.dev",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
@@ -37,7 +43,8 @@
       {
         "fullscreen": false,
         "resizable": true,
-        "title": "mobile-dev-util",
+        "title": "mobile dev util",
+        "center": true,
         "width": 800,
         "height": 600
       }
