@@ -1,53 +1,42 @@
 {
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Mobile Dev Util",
+  "mainBinaryName": "mobile-dev-util",
+  "version": "0.1.0",
+  "identifier": "me.jiangsc.dev",
   "build": {
     "beforeDevCommand": "pnpm dev",
+    "devUrl": "http://localhost:1420",
     "beforeBuildCommand": "pnpm build",
-    "devPath": "http://localhost:1420",
-    "distDir": "../dist",
-    "withGlobalTauri": false
+    "frontendDist": "../dist"
   },
-  "package": {
-    "productName": "mobile-dev-util",
-    "version": "0.0.0"
-  },
-  "tauri": {
-    "allowlist": {
-      "all": true,
-      "shell": {
-        "all": true,
-        "open": true,
-        "execute": true,
-        "scope": [
-          { "name": "adb", "cmd": "adb", "args": true },
-          { "name": "simctl", "cmd": "simctl", "args": true },
-          { "name": "emulator", "cmd": "emulator", "args": true }
-        ]
-      }
-    },
-    "bundle": {
-      "active": true,
-      "targets": "all",
-      "identifier": "me.jiangsc.dev",
-      "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
-      ]
-    },
-    "security": {
-      "csp": null
-    },
+  "app": {
     "windows": [
       {
-        "fullscreen": false,
-        "resizable": true,
-        "title": "mobile dev util",
+        "title": "Mobile Dev Util",
+        "width": 1040,
+        "height": 680,
+        "minWidth": 760,
+        "minHeight": 520,
         "center": true,
-        "width": 800,
-        "height": 600
+        "resizable": true
       }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "category": "DeveloperTool",
+    "shortDescription": "Android emulator & iOS simulator launcher",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
     ]
   }
 }
